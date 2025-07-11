@@ -1,6 +1,6 @@
 # Smart Contract-based Honeytoken System for IoT Device Security
 
-## 📜 Project Description
+## Project Description
 
 This project implements a Smart Contract-based Honeytoken System to enhance the security of IoT devices using blockchain technology. The system deploys Ethereum smart contracts to monitor and detect unauthorized access to honeytokens—dummy IoT data or fake control commands. This innovative approach provides a decentralized, tamper-proof intrusion detection mechanism tailored for IoT environments.
 
@@ -10,7 +10,7 @@ This project implements a Smart Contract-based Honeytoken System to enhance the 
 - **Smart Contracts**: Automatically logs and responds to unauthorized access attempts.
 - **Tamper-Proof Logs**: Intrusion detection events are stored immutably on the blockchain.
 
-## 🛠️ Technologies and Tools Used
+## Technologies and Tools Used
 
 - **Programming Languages**: Solidity, Python, JavaScript (Node.js)
 - **Blockchain Platform**: Ethereum (Ganache for local development)
@@ -18,7 +18,7 @@ This project implements a Smart Contract-based Honeytoken System to enhance the 
 - **Operating System**: Ubuntu 22.04 LTS
 - **Simulation Environment**: Python-based IoT device simulator
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these steps to set up and run the project on your local machine.
 
@@ -108,7 +108,7 @@ Run the Python script to simulate normal IoT activity:
 python3 simulate_iot.py
 ```
 
-## 🧪 Testing
+## Testing
 
 Write unit tests for the smart contract in the test/honeytoken_test.js file.
 Run the tests using Truffle:
