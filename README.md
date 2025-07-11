@@ -34,13 +34,13 @@ Ensure the following are installed on your system:
 
 ### Installation Steps
 
-1. Clone this repository:
+#### 1. Clone this repository:
 ```
 git clone https://github.com/MenakaGodakanda/honeytoken-iot-security.git
 cd honeytoken-iot-security
 ```
 
-2. Install dependencies:
+#### 2. Install dependencies:
 - Install Node.js and NPM
 Node.js is necessary for setting up the blockchain and smart contract environment.
 ```
@@ -76,114 +76,82 @@ Ubuntu should already have Python installed, but if not:
 sudo apt install python3 python3-pip
 ```
 
-3. Project Setup
+#### 3. Project Setup
 Create a directory structure for the project:
 ```
 truffle init
 ```
 Output:
 
-4. Configuring Truffle
+#### 4. Configuring Truffle
 In the `truffle-config.js`, configure Truffle to connect to the local blockchain:
 
-5. Launch Ganache:
+#### 5. Launch Ganache:
 ```
 ganache-cli
 ```
 
-6. Deploy the Smart Contract
+#### 6. Deploy the Smart Contract
 Run the following command to compile and deploy the contract:
 ```
 truffle compile
 truffle migrate --network development
 ```
 This will deploy the contract to the local blockchain (Ganache). You should see an output showing the contract address.
-[Output]
+
+<img width="883" height="711" alt="Figure 2 - Smart Contract Deployment" src="https://github.com/user-attachments/assets/7b27201a-6045-48c8-a92e-8048e3653b14" />
 
 This output confirms that the `HoneyToken.sol` smart contract is successfully deployed on the local blockchain.
 
-7. Testing and Monitoring Honeytokens
-Run the Python script to simulate normal IoT activity:
+#### 7. Simulate IoT Device Authorization and Unauthorized Access
+When you run the simulation script:
 ```
-python3 simulate_iot.py
+node src/iot_simulation.js
 ```
+<img width="640" height="58" alt="Figure 3 - Response from the Contract" src="https://github.com/user-attachments/assets/12fda972-fdc5-49ae-8a72-99ac2274195b" />
 
-## Testing
+- Here’s what this output shows:
+  - **Device Authorized**: The authorized IoT device (`accounts[1]`) has been successfully added to the list of authorized devices.
+  - **Unauthorized Access Detected**: When an unauthorized device (`accounts[2]`) tries to access the honeytoken, the system detects it and logs the attempt.
 
-Write unit tests for the smart contract in the test/honeytoken_test.js file.
-Run the tests using Truffle:
 
+#### 8. Test Case Output
+When you run the tests:
+```
 truffle test
-
-
-Testing 
-
-```
-npm install
 ```
 
-3. Install Python libraries for IoT simulation:
-```
-pip install -r requirements.txt
-```
+The test output should look like this:
 
-4. Launch Ganache for a local Ethereum blockchain:
+<img width="665" height="312" alt="Figure 4 - Test and Validation" src="https://github.com/user-attachments/assets/cc0aad1e-4d86-487b-b8c8-eaeeae484d73" />
 
-Download Ganache from here.
-Start Ganache and note the RPC server (e.g., http://127.0.0.1:7545) and the accounts provided.
+- This confirms that:
+  - The smart contract allows the owner to authorize devices.
+  - The contract correctly triggers an alert when an unauthorized device accesses the honeytoken.
 
-5. Compile and deploy the smart contract:
-```
-truffle compile
-truffle migrate --network development
-```
-
-6. Update the smart contract address in the Web3.js client script (web3_client.js).
-
-
-## 📂 Project Structure
+## Project Structure
 ```
 iot-honeytoken/
 │
 ├── contracts/           # Contains smart contracts
 │   └── HoneyToken.sol   # Solidity file for smart contract
-│
 ├── migrations/          # Deployment scripts
 │   └── 2_deploy_contracts.js
-│
 ├── test/                # Test files for contracts
-│
 ├── src/                 # IoT Simulation and interaction with smart contract
 │   └── iot_simulation.js
-│
 ├── truffle-config.js    # Truffle configuration
-│
 └── package.json         # Node.js dependencies
 ```
 
-## 💻 Usage
-
-Run the IoT Simulation: Start the Python-based IoT device simulator:
-```
-python python/iot_simulator.py
-```
-
-Access the Honeytoken via Web3.js: Simulate unauthorized access to the honeytoken by running the Web3.js client:
-```
-node src/web3_client.js
-```
-
-Check Blockchain Logs: View the honeytoken access events in the Ganache transaction log. Logs indicate the address of the unauthorized user and details of the access attempt.
+## Published Research
 
 
-
-## 📖 Documentation
-
-For detailed implementation steps and theoretical background, refer to the Conference Paper included in the repository.<br>
-🔗 References: <br>
-<a href="https://ieeexplore.ieee.org/abstract/document/11020086">IEEE</a> <br>
+This system was presented at the 2025 International Conference on Computer Sciences, Engineering, and Technology Innovation (ICoCSETI) and published as a research conference paper. Read more here: <br>
+<a href="https://ieeexplore.ieee.org/abstract/document/11020086">Smart Contract Honeytoken System using Blockchain for Internet of Things Device Security
+</a> <br>
 <a href="https://www.researchgate.net/publication/392375179_Smart_Contract_Honeytoken_System_using_Blockchain_for_Internet_of_Things_Device_Security">ResearchGate</a>
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License.
