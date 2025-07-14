@@ -30,7 +30,6 @@ Ensure the following are installed on your system:
 - Python 3.x
 - Truffle Suite
 - Ganache (for local Ethereum blockchain)
-- MetaMask (optional, for blockchain interaction in the browser)
 
 ### Installation Steps
 
